@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+    Structure de base pour les autres pages JSF.
+-->
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+        <link rel="icon" href="#{resource['default/images/favicon.ico']}" />
+        <h:outputStylesheet library="default" name="styles/whiteapp.css" />
+        <title>
+            <h:outputText value="#{m['app.title']}" />
+        </title>
+
+        <f:loadBundle basename="Messages" var="m" />
+        <f:view locale="#{internationalization.currentLocale}" />
+
+        <ui:insert name="header">
+            <!-- A REDEFINIR -->
+        </ui:insert>
+    </h:head>
+    <h:body>
+        <header>
+            <nav class="select-lang">
+                <h:form>
+                    <ul>
+                        <li>
+                            <h:commandLink 
+                                title="#{m['lang.fr']}"
+                                action="#{internationalization.changeLocale('FR')}">
+                                <h:graphicImage library="default" name="images/flag-fr.png" />
+                            </h:commandLink>
+                        </li>
+                        <li>
+                            <h:commandLink 
+                                title="#{m['lang.en']}"
+                                action="#{internationalization.changeLocale('EN')}">
+                                <h:graphicImage library="default" name="images/flag-uk.png" />
+                            </h:commandLink>
+                        </li>
+                    </ul>
+                </h:form>
+            </nav>
+            <ui:insert name="title">
+                <!-- A REDEFINIR -->
+            </ui:insert>
+        </header>
+        <ui:insert name="main">
+            <!-- A REDEFINIR -->
+        </ui:insert>
+        <footer>
+            <h:panelGroup layout="span">
+                <h:outputText value="#{m['app.version']}" />
+            </h:panelGroup>
+        </footer>
+        <h:outputScript library="default" name="scripts/whiteapp.js" />
+    </h:body>
+
+</html>
+

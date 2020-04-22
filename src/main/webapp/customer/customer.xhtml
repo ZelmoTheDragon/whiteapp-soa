@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Cette page hérite que la structure 'layout.xhtml' -->
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+    template="/WEB-INF/templates/layout.xhtml">
+
+    <ui:define name="header">
+
+    </ui:define>
+
+    <ui:define name="title">
+        <h1 class="title">
+            <h:outputText value="#{m['customer.title']}" />
+        </h1>
+    </ui:define>
+
+    <ui:define name="main">
+        <fieldset>
+            <legend>
+                <h:outputText value="#{m['customer.form_create']}" rendered="#{not customerController.contains()}" />
+                <h:outputText value="#{m['customer.form_update']}" rendered="#{customerController.contains()}"/>
+            </legend>
+            <h:form id="customerFormSave" prependId="false">
+                <h:panelGrid columns="3">
+                    <h:outputLabel for="givenName" value="#{m['customer.givenName']}" />
+                    <h:inputText id="givenName" value="#{customerController.entity.givenName}" />
+                    <h:message for="givenName" errorClass="required" />
+
+                    <h:outputLabel for="familyName" value="#{m['customer.familyName']}" />
+                    <h:inputText id="familyName" value="#{customerController.entity.familyName}" />
+                    <h:message for="familyName" errorClass="required" />
+
+                    <h:outputLabel for="email" value="#{m['customer.email']}" />
+                    <h:inputText id="email" value="#{customerController.entity.email}" required="true" >
+                        <!-- Surchager la balise 'h:inputText' pour le support HTML5 du type 'email' -->
+                        <f:passThroughAttribute name="type" value="email" />
+                        <!-- Ajout du validateur pour vérifier que l'email n'est pas déjà utilisé -->
+                        <f:validator validatorId="emailExistValidator" disabled="#{customerController.contains()}" />
+                    </h:inputText>
+                    <h:message for="email" errorClass="required" />
+
+                    <h:outputLabel for="birthDate" value="#{m['customer.birthDate']}" />
+                    <h:inputText id="birthDate" value="#{customerController.entity.birthDate}">
+                        <!-- Surchager la balise 'h:inputText' pour le support HTML5 du type 'date' -->
+                        <f:passThroughAttribute name="type" value="date" />
+                        <!-- Ajout du convertisseur pour le support du type java LocalDate -->
+                        <f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
+                    </h:inputText>
+                    <h:message for="birthDate" errorClass="required" />
+
+                    <br/>
+                    <br/>
+                    <h:messages globalOnly="true" errorClass="required" warnClass="warn"  />
+
+                </h:panelGrid>     
+                <br/>
+                <h:commandButton 
+                    id="save"
+                    value="#{m['btn.save']}"
+                    actionListener="#{customerController.save()}" />
+
+                <h:commandButton value="#{m['btn.reset']}" type="reset"/>
+
+            </h:form>
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                <h:outputText value="#{m['customer.table']}" />
+            </legend>
+            <h:form id="customerFormShow" prependId="false">
+                <h:dataTable 
+                    headerClass="table-head"
+                    rowClasses="table-row"
+                    value="#{customerController.find()}" 
+                    var="e" >
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{m['customer.givenName']}" />
+                        </f:facet>
+                        <h:outputText value="#{e.givenName}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{m['customer.familyName']}" />
+                        </f:facet>
+                        <h:outputText value="#{e.familyName}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{m['customer.email']}" />
+                        </f:facet>
+                        <h:outputText value="#{e.email}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{m['customer.birthDate']}" />
+                        </f:facet>
+                        <h:outputText value="#{e.birthDate}"  >
+                            <f:convertDateTime type="localDate" pattern="dd/MM/yyyy" />
+                        </h:outputText>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{m['action']}" />
+                        </f:facet>
+
+                        <h:commandButton 
+                            value="#{m['btn.edit']}" 
+                            actionListener="#{customerController.edit(e)}" />
+
+                        <h:commandButton 
+                            value="#{m['btn.remove']}" 
+                            actionListener="#{customerController.remove(e)}" />
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </fieldset>
+
+    </ui:define>
+
+</ui:composition>

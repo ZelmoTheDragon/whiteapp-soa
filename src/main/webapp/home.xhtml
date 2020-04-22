@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Cette page hérite que la structure 'layout.xhtml' -->
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+    template="/WEB-INF/templates/layout.xhtml">
+
+    <ui:define name="title">
+        <h1 class="title">
+            <h:outputText value="#{m['app.title']}" />
+        </h1>   
+    </ui:define>
+
+    <ui:define name="main">
+        <section class="container">
+            <blockquote>
+                <h:panelGroup layout="block">
+                    <h:outputText value="#{m['app.description']}" />
+                </h:panelGroup>
+            </blockquote>
+            <h:link outcome="/authenticate" value="#{m['btn.authenticate']}" />
+        </section>
+    </ui:define>
+</ui:composition>
+
