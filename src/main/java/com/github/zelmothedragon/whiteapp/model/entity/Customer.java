@@ -1,4 +1,4 @@
-package fr.moselleacademy.whiteapp.model.entity;
+package com.github.zelmothedragon.whiteapp.model.entity;
 
 import java.time.LocalDate;
 import java.util.Comparator;

@@ -1,7 +1,7 @@
-package fr.moselleacademy.whiteapp.model.entity;
+package com.github.zelmothedragon.whiteapp.model.entity;
 
 
-import fr.moselleacademy.whiteapp.model.UUIDConverter;
+import com.github.zelmothedragon.whiteapp.model.UUIDConverter;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;

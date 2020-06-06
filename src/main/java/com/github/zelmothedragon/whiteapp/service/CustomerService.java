@@ -1,7 +1,7 @@
-package fr.moselleacademy.whiteapp.service;
+package com.github.zelmothedragon.whiteapp.service;
 
-import fr.moselleacademy.whiteapp.model.entity.Customer;
-import fr.moselleacademy.whiteapp.model.repository.CustomerDAO;
+import com.github.zelmothedragon.whiteapp.model.entity.Customer;
+import com.github.zelmothedragon.whiteapp.model.repository.CustomerDAO;
 import java.io.Serializable;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;

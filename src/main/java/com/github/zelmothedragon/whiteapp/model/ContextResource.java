@@ -1,4 +1,4 @@
-package fr.moselleacademy.whiteapp.model;
+package com.github.zelmothedragon.whiteapp.model;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Disposes;

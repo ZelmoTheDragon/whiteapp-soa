@@ -1,4 +1,4 @@
-package fr.moselleacademy.whiteapp.model.repository;
+package com.github.zelmothedragon.whiteapp.model.repository;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.Collection;

@@ -1,6 +1,6 @@
-package fr.moselleacademy.whiteapp.service;
+package com.github.zelmothedragon.whiteapp.service;
 
-import fr.moselleacademy.whiteapp.model.repository.AbstractDAO;
+import com.github.zelmothedragon.whiteapp.model.repository.AbstractDAO;
 import java.util.List;
 
 /**

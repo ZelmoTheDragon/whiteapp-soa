@@ -1,6 +1,6 @@
-package fr.moselleacademy.whiteapp.controller;
+package com.github.zelmothedragon.whiteapp.controller;
 
-import fr.moselleacademy.whiteapp.service.AbstractService;
+import com.github.zelmothedragon.whiteapp.service.AbstractService;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import javax.enterprise.inject.spi.CDI;

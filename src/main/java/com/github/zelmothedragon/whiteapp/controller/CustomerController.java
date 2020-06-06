@@ -1,7 +1,7 @@
-package fr.moselleacademy.whiteapp.controller;
+package com.github.zelmothedragon.whiteapp.controller;
 
-import fr.moselleacademy.whiteapp.model.entity.Customer;
-import fr.moselleacademy.whiteapp.service.CustomerService;
+import com.github.zelmothedragon.whiteapp.model.entity.Customer;
+import com.github.zelmothedragon.whiteapp.service.CustomerService;
 import java.io.Serializable;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;

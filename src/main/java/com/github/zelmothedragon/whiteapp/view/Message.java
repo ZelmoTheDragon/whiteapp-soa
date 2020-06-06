@@ -1,4 +1,4 @@
-package fr.moselleacademy.whiteapp.view;
+package com.github.zelmothedragon.whiteapp.view;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

@@ -1,8 +1,8 @@
-package fr.moselleacademy.whiteapp.model.repository;
+package com.github.zelmothedragon.whiteapp.model.repository;
 
 
-import fr.moselleacademy.whiteapp.model.entity.Customer;
-import fr.moselleacademy.whiteapp.model.entity.Customer_;
+import com.github.zelmothedragon.whiteapp.model.entity.Customer;
+import com.github.zelmothedragon.whiteapp.model.entity.Customer_;
 import java.io.Serializable;
 import java.util.Optional;
 import javax.enterprise.context.Dependent;

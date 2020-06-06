@@ -1,4 +1,4 @@
-package fr.moselleacademy.whiteapp.model;
+package com.github.zelmothedragon.whiteapp.model;
 
 import java.util.Objects;
 import java.util.UUID;

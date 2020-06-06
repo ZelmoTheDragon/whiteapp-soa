@@ -1,4 +1,4 @@
-package fr.moselleacademy.whiteapp.view;
+package com.github.zelmothedragon.whiteapp.view;
 
 import java.io.Serializable;
 import java.util.Locale;

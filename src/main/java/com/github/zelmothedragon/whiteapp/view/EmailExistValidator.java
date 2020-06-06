@@ -1,6 +1,6 @@
-package fr.moselleacademy.whiteapp.view;
+package com.github.zelmothedragon.whiteapp.view;
 
-import fr.moselleacademy.whiteapp.controller.CustomerController;
+import com.github.zelmothedragon.whiteapp.controller.CustomerController;
 import javax.enterprise.inject.spi.CDI;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;

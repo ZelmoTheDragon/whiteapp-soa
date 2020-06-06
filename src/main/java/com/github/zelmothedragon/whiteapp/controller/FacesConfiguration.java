@@ -1,4 +1,4 @@
-package fr.moselleacademy.whiteapp.controller;
+package com.github.zelmothedragon.whiteapp.controller;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.annotation.FacesConfig;
